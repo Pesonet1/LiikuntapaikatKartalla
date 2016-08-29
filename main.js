@@ -361,6 +361,7 @@ function init() {
     	    params.viewparams = viewparams.join(';');
     	    result = new ol.layer.Image({
       	      source: new ol.source.ImageWMS({
+      	      	//Jotta pgRoutingin saa toimimaan jälleen, tulee se asentaa esim. lokaalisti koneelle ja laittaa lokaalilinkki tähän
                 url: 'http://130.233.249.20:8080/geoserver/pgrouting/wms',
                 params: params
       	      })
