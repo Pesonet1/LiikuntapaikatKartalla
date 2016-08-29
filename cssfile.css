@@ -1,0 +1,144 @@
+
+	    html, body {
+	overflow:hidden;
+	height:100%;
+	}
+    	    #header {
+	color:black;
+	text-align:center;
+	font-family: "Lucida Sans Unicode", Lucida Grande, sans-serif;
+	position:relative;
+	z-index: 50;
+	}
+	    #footer {
+	background-color:#FF6600;
+	color:black;
+	clear:both;
+	text-align:left;
+	position:absolute;
+	width:100%;
+	bottom:0;
+	}
+	    #map {
+	width:100%;
+	height:90%; /*86%*/
+	position:absolute;
+	}
+
+	.btn {
+	  margin:3px;
+	} 
+
+  	.btn-round { 
+	  font-weight: bold;
+	  width: 19px;
+	  height: 19px;
+	  text-align: center;
+	  padding: 1px 0;
+	  font-size: 13px;
+	  line-height: 0.1;
+	  border-radius: 30px;
+	}	
+
+	.sidebar {
+	position:absolute;
+	top:0; right:0; width:260px;
+ 	bottom:0;
+	overflow-x:auto;
+	background-color:#ffcc00;
+	margin:0;
+	padding:3px;
+	font-size:15px;
+	border-radius:10px;
+	text-align:center;
+	z-index:80;
+	}
+	
+	.information {
+	width: 240px;
+	text-align: center;
+	display: inline-block;
+	}
+
+	.container {
+	min-width:100%;
+	background-color:#FF6600;
+	}	
+/*overviewmapin stylet */
+
+.ol-custom-overviewmap,
+.ol-custom-overviewmap.ol-uncollapsible {
+  bottom: 4em;
+  left: .5em;
+  right: auto;
+  top: auto;
+}
+
+.ol-custom-overviewmap:not(.ol-collapsed)  {
+  border: 1px solid black;
+}
+
+.ol-custom-overviewmap .ol-overviewmap-map {
+  border: none;
+  width: 150px;
+}
+
+.ol-custom-overviewmap .ol-overviewmap-box {
+  border: 2px solid red;
+}
+
+.ol-custom-overviewmap:not(.ol-collapsed) button{
+  bottom: 1px;
+  left: 1px;
+  right: auto;
+  top: auto;
+}
+
+.ol-rotate {
+  top: 170px;
+  right: 0;
+}
+
+/* erikokoisten nayttojen erot */
+
+/* pieni naytto */
+ @media screen and (max-width:500px) { 
+	h1{
+        font-size:24px;}
+	.ol-toggle-options {
+          z-index: 1000;
+          position:absolute;
+          right: 0px;
+          top: 22px;
+	}
+	div span:last-of-type {
+        display: block;}
+	.btn{
+	padding:4px 8px; /* pienemmat painikkeet */
+	}
+	}
+
+/* keskikokoinen naytto */
+ @media screen and (min-width: 501px) and (max-width:800px) { 
+	h1{
+        font-size:30px;}
+	.ol-toggle-options {
+          z-index: 1000;
+          position:absolute;
+          right: 0px;
+          top: 0px;
+	}
+	}
+
+/* iso naytto */
+@media screen and (min-width: 801px) { 
+	h1{
+        font-size:36px;}
+	.ol-toggle-options {
+          z-index: 1000;
+          position:absolute;
+          right: 0px;
+          top: 0px; 
+	}
+	}
+
