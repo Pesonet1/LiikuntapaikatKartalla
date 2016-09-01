@@ -43,84 +43,86 @@
     </script>
 
 
-    <!-- Header osio, johon tulee otsikko ja ehka joki valikko -->
+    <!-- Header osio, johon tulee otsikko ja ehka jokin valikko -->
     <div class="container">
-   	<div id="header">
-    	  <h1><span>Liikuntapaikat</span> <span>kartalla</span></h1>
-       
-  	  <div class="ol-toggle-options">  
-	   <button class="btn btn-primary" title="Sivupalkki" onClick="toggleControlPanel()" href="#toggle">Valikko</button>   
-    	  </div>
-	</div>
-   </div> 
+   	  <div id="header">
+        <h1><span>Liikuntapaikat</span> <span>kartalla</span></h1>
+     
+  	    <div class="ol-toggle-options">  
+	      <button class="btn btn-primary" title="Sivupalkki" onClick="toggleControlPanel()" href="#toggle">Valikko</button>   
+        </div>
+	  </div>
+    </div> 
     
 
     <div id='sidebar' class='sidebar' style="display:">
             
-    	<button class="btn btn-primary" title="Sivupalkki" onClick="toggleControlPanel()" href="#toggle">Sulje valikko</button>   
-	<br><br>  	
+      <button class="btn btn-primary" title="Sivupalkki" onClick="toggleControlPanel()" href="#toggle">Sulje valikko</button>   
+	  
+	  <br><br>  	
    
-	<!--Filtteröinti valikko wfs-->
-	Näytettävät kohteet:
-	<select id="filtering_wfs" onchange="update()">
-          <option value="">Kaikki kohteet</option>
-	  <option value="AND(tyyppikoodi=2120)">Kuntosalit</option>
-          <option value="AND(tyyppikoodi BETWEEN 3000 AND 3999)">Uintipaikat</option>
-	  <option value="AND(tyyppikoodi BETWEEN 2200 AND 2299)">Liikuntahallit</option>
-	  <option value="AND(tyyppikoodi BETWEEN 1200 AND 1220)">Yleisurheilu</option> 
-	  <option value="AND(tyyppikoodi BETWEEN 1300 AND 1380)">Pallokentät</option>
-	  <option value="AND(tyyppikoodi BETWEEN 2500 AND 2530)">Jäähallit</option>
-	  <option value="AND(tyyppikoodi BETWEEN 4000 AND 4999)">Maastoliikuntapaikat</option>  
-	  <option value="AND(tyyppikoodi BETWEEN 6000 AND 6220)">Eläinurheilualueet</option>
-        </select>
+	  <!--Filtteröinti valikko wfs-->
+	  Näytettävät kohteet:
+	  <select id="filtering_wfs" onchange="update()">
+        <option value="">Kaikki kohteet</option>
+	    <option value="AND(tyyppikoodi=2120)">Kuntosalit</option>
+        <option value="AND(tyyppikoodi BETWEEN 3000 AND 3999)">Uintipaikat</option>
+	    <option value="AND(tyyppikoodi BETWEEN 2200 AND 2299)">Liikuntahallit</option>
+	    <option value="AND(tyyppikoodi BETWEEN 1200 AND 1220)">Yleisurheilu</option> 
+	    <option value="AND(tyyppikoodi BETWEEN 1300 AND 1380)">Pallokentät</option>
+	    <option value="AND(tyyppikoodi BETWEEN 2500 AND 2530)">Jäähallit</option>
+	    <option value="AND(tyyppikoodi BETWEEN 4000 AND 4999)">Maastoliikuntapaikat</option>  
+	    <option value="AND(tyyppikoodi BETWEEN 6000 AND 6220)">Eläinurheilualueet</option>
+      </select>
 
-<br><br>
+      <br><br>
 
-	<!-- Kohteiden haku -->
-	Etsi liikuntapaikkaa näytettävistä kohteista:
-	<button class="btn btn-primary btn-round" onclick="alert('Valitse Nimi ja kirjoita liikuntpaikan nimi tai osa siitä.\nVaihtoehtoisesti valitse Tyyppi ja kirjoita minkä tyyppiset paikat\nhaluat nähdä, esim. luistelu. Paina lopuksi Etsi.')">i</button>
+	  <!-- Kohteiden haku -->
+	  Etsi liikuntapaikkaa näytettävistä kohteista:
+	  <button class="btn btn-primary btn-round" onclick="alert('Valitse Nimi ja kirjoita liikuntpaikan nimi tai osa siitä.\nVaihtoehtoisesti valitse Tyyppi ja kirjoita minkä tyyppiset paikat\nhaluat nähdä, esim. luistelu. Paina lopuksi Etsi.')">i</button>
 	
-	<br>
+	  <br>
 
-	<select id="filtering_search">
-          <option value="AND(strToLowerCase(nimi_fi) LIKE ">Nimi</option>
-          <option value="AND(tyyppi_nimi_fi LIKE ">Tyyppi</option>
-        </select>
-        <input type="text" size="15" id="filter"/>
-        <button class="btn btn-primary btn-sm" id="updateFilterButton" href="#" onClick="update()" title="Apply filter">Etsi</button>
-	<button class="btn btn-primary btn-sm" id="resetFilterButton" href="#" onClick="resetFilter()" title="Reset filter">Poista haku</button>
+	  <select id="filtering_search">
+        <option value="AND(strToLowerCase(nimi_fi) LIKE ">Nimi</option>
+        <option value="AND(tyyppi_nimi_fi LIKE ">Tyyppi</option>
+      </select>
+        
+      <input type="text" size="15" id="filter"/>
+      <button class="btn btn-primary btn-sm" id="updateFilterButton" href="#" onClick="update()" title="Apply filter">Etsi</button>
+	  <button class="btn btn-primary btn-sm" id="resetFilterButton" href="#" onClick="resetFilter()" title="Reset filter">Poista haku</button>
 
 
-	<br><br>
+	  <br><br>
     	
-	<!-- Paikannukselle nappula, tällä hetkellä asettaa reitinhaun aloitussijainnin -->
-	<button id="track" class="btn btn-primary">Paikanna</button>
-	<button class="btn btn-primary btn-round" onclick="alert('Näyttää nykyisen sijaintisi')">i</button>
+	  <!-- Paikannukselle nappula, tällä hetkellä asettaa reitinhaun aloitussijainnin -->
+	  <button id="track" class="btn btn-primary">Paikanna</button>
+	  <button class="btn btn-primary btn-round" onclick="alert('Näyttää nykyisen sijaintisi')">i</button>
 	
-	<br>
+	  <br>
 
-	<!-- Painettuna mahdollistaa uuden aloitussijainnin maarittamisen -->
-	<button id="new_start" class="btn btn-primary">Lisää aloitussijainti kartalle</button>
-	<button class="btn btn-primary btn-round" onclick="alert('Lisää aloitussijainti navigoinnille.\nKlikkaa ensin Lisää aloitussijainti ja sitten haluamaasi kohtaa kartalla')">i</button>
+	  <!-- Painettuna mahdollistaa uuden aloitussijainnin maarittamisen -->
+	  <button id="new_start" class="btn btn-primary">Lisää aloitussijainti kartalle</button>
+	  <button class="btn btn-primary btn-round" onclick="alert('Lisää aloitussijainti navigoinnille.\nKlikkaa ensin Lisää aloitussijainti ja sitten haluamaasi kohtaa kartalla')">i</button>
 	
-	<br>
+	  <br>
 	
-	<!-- Navigoi valittuun kohteeeen -->
-	<button id="navigate" class="btn btn-primary">Navigoi kohteeseen</button>
-	<button class="btn btn-primary btn-round" onclick="alert('Näyttää lyhimmän reitin aloitussijainnin ja valitun kohteen välillä')">i</button>
+	  <!-- Navigoi valittuun kohteeeen -->
+	  <button id="navigate" class="btn btn-primary">Navigoi kohteeseen</button>
+	  <button class="btn btn-primary btn-round" onclick="alert('Näyttää lyhimmän reitin aloitussijainnin ja valitun kohteen välillä')">i</button>
 	
-	<br>
+	  <br>
 
-	<!-- Poista haettu reitti -->
-	<button id="clear" class="btn btn-primary">Poista reitti</button>
+	  <!-- Poista haettu reitti -->
+	  <button id="clear" class="btn btn-primary">Poista reitti</button>
 	
-	<br><br>
+	  <br><br>
 
-	<!-- Valitun kohteen tiedot -->
-	<div class="information" id="information">
-	  <em>Klikkaa liikuntakohdetta nähdäksesi sen tiedot</em>
-	  &nbsp;
-	</div>
+	  <!-- Valitun kohteen tiedot -->
+	  <div class="information" id="information">
+	    <em>Klikkaa liikuntakohdetta nähdäksesi sen tiedot</em>
+	    &nbsp;
+	  </div>
 
     </div>
 
